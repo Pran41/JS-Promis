@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS PROMIS</title>
+</head>
+<body>
+    <h1>JS PROMIS</h1>
+    <p id="results"></p>
+    <script>
+        function myDisplayer(some){
+            document.getElementById(results).innerHTML = some;
+        }
+        function sum(a,b){
+              var sum = a + b;
+              myDisplayer(sum);
+        }
+
+        let myPromise = new Promise(function(myResolve, myReject) {
+            let x = 0;
+            if(x==0){
+                myResolve ("ok");
+            } else {
+                myreject ("Error");
+            }
+
+        });
+        myPromise.then(
+            function(value) {sum(5,5);},
+            function(error) {sum(error);}
+        );
+    </script>
+</body>
+</html>
